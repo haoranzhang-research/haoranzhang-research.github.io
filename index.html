@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haoran Zhang — statistical physics of collective silence</title>
+  <meta name="description" content="Haoran Zhang, independent researcher (Meta Sci). Nonequilibrium field dynamics of collective behavior: the mechanism, legitimacy, observability, and controllability of collective silence in human–AI systems." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0c0c0c" media="(prefers-color-scheme: dark)" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Haoran Zhang — statistical physics of collective silence" />
+  <meta property="og:description" content="Independent researcher studying how coordinated withdrawal emerges, propagates, and can be detected before collapse." />
+  <meta property="og:site_name" content="Haoran Zhang" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Prevent theme flash: apply saved/preferred theme before paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        var d = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (d) document.documentElement.classList.add('dark');
+      } catch (e) {}
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Haoran Zhang",
+    "jobTitle": "Independent Researcher",
+      "affiliation": { "@type": "Organization", "name": "Meta Sci", "url": "https://metasci.co" },
+    "sameAs": [
+      "https://orcid.org/0009-0002-5585-1104",
+      "https://github.com/haoranzhang-research"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #fafaf7;
+      --ink: #1a1a1a;
+      --ink-soft: #55534d;
+      --accent: #b33a2b;
+      --rule: #dddddd;
+      --font-serif: "Source Serif 4", Georgia, serif;
+      --font-mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+
+    html.dark {
+      color-scheme: dark;
+      --paper: #0c0c0c;
+      --ink: #d8d8d2;
+      --ink-soft: #8a8a84;
+      --accent: #33ff66;
+      --rule: #242424;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { background-color: var(--paper); }
+
+    body {
+      margin: 0;
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-serif);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    ::selection { background: var(--accent); color: var(--paper); }
+
+    a { color: inherit; }
+
+    strong { font-weight: 600; }
+
+    .mono { font-family: var(--font-mono); }
+    .ink-soft { color: var(--ink-soft); }
+    .accent { color: var(--accent); }
+    a.inline-link { color: var(--accent); text-decoration: none; text-underline-offset: 4px; }
+    a.inline-link:hover { text-decoration: underline; }
+    .ink { color: var(--ink); }
+
+    /* Layout */
+    main {
+      max-width: 68ch;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    @media (min-width: 640px) {
+      main { padding: 6rem 1.5rem; }
+    }
+
+    hr.rule {
+      border: 0;
+      border-top: 1px solid var(--rule);
+      margin: 3rem 0;
+    }
+
+    /* Header */
+    header { position: relative; }
+
+    .header-curve {
+      pointer-events: none;
+      position: absolute;
+      top: -1.5rem;
+      right: 0;
+      height: 6rem;
+      width: 14rem;
+      opacity: 0.1;
+      color: var(--ink);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.25rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+    @media (min-width: 640px) {
+      h1 { font-size: 3rem; }
+    }
+
+    .affil { margin: 0.75rem 0 0; font-family: var(--font-mono); font-size: 0.875rem; color: var(--ink-soft); }
+    .tagline { margin: 0.5rem 0 0; font-family: var(--font-serif); font-style: italic; font-size: 1.125rem; text-wrap: pretty; }
+    .formula { margin: 1rem 0 0; font-family: var(--font-mono); font-size: 0.875rem; color: var(--ink-soft); }
+
+    nav.links {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+    }
+    nav.links a { color: var(--accent); text-decoration: none; text-underline-offset: 4px; }
+    nav.links a:hover { text-decoration: underline; }
+
+    /* Theme toggle */
+    .toggle {
+      padding-top: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+    .toggle button {
+      background: none;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      font: inherit;
+      color: inherit;
+    }
+    .toggle button:hover { color: var(--ink); }
+    .toggle button.active { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* Section labels */
+    h2.section-label {
+      margin: 0;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    section p { margin: 1rem 0 0; }
+    p.hint { font-family: var(--font-mono); font-size: 0.875rem; color: var(--ink-soft); }
+
+    /* Research list */
+    ol.questions { list-style: none; margin: 1rem 0 0; padding: 0; }
+    ol.questions li { display: flex; gap: 0.75rem; margin-top: 0.75rem; }
+    ol.questions .num { font-family: var(--font-mono); font-size: 0.875rem; color: var(--ink-soft); user-select: none; }
+
+    /* Publications */
+    ul.pubs { list-style: none; margin: 1.5rem 0 0; padding: 0; }
+    ul.pubs > li { margin-top: 2rem; }
+    ul.pubs > li:first-child { margin-top: 0; }
+
+    .pub-title { font-size: 1.125rem; font-weight: 500; line-height: 1.35; }
+    a.pub-title { color: var(--accent); text-decoration: none; text-underline-offset: 4px; }
+    a.pub-title:hover { text-decoration: underline; }
+
+    .pub-meta {
+      margin-top: 0.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+    }
+
+    .pub-links {
+      margin-top: 0.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+    }
+    .pub-links a { color: var(--accent); text-decoration: none; text-underline-offset: 4px; }
+    .pub-links a:hover { text-decoration: underline; }
+
+    ul.notes { list-style: none; margin: 0.75rem 0 0; padding: 0; }
+    ul.notes li { display: flex; gap: 0.75rem; margin-top: 0.5rem; color: var(--ink-soft); }
+    ul.notes .bullet { font-family: var(--font-mono); color: var(--accent); user-select: none; }
+    .pretty { text-wrap: pretty; }
+
+    /* Header curve one-time draw */
+    @keyframes draw-curve {
+      from { stroke-dashoffset: var(--curve-len); }
+      to { stroke-dashoffset: 0; }
+    }
+    .curve-line {
+      --curve-len: 460;
+      stroke-dasharray: var(--curve-len);
+      stroke-dashoffset: var(--curve-len);
+      animation: draw-curve 2s ease-out forwards;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .curve-line { animation: none; stroke-dashoffset: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- ── Header ───────────────────────────────── -->
+    <header>
+      <svg class="header-curve" aria-hidden="true" viewBox="0 0 224 96" fill="none" preserveAspectRatio="none">
+        <path class="curve-line"
+          d="M0 48 C 10 8, 22 8, 32 48 S 54 88, 64 48 S 86 18, 96 48 S 118 78, 128 48 S 150 30, 160 48 S 182 66, 192 48 S 214 42, 224 48"
+          stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+      </svg>
+
+      <div class="header-top">
+        <h1>Haoran Zhang</h1>
+        <div class="toggle" aria-label="Color theme">
+          [<button type="button" id="btn-light" onclick="setTheme(false)">light</button><span aria-hidden="true">|</span><button type="button" id="btn-dark" onclick="setTheme(true)">dark</button>]
+        </div>
+      </div>
+
+      <p class="affil">Independent researcher · <a class="inline-link" href="https://metasci.co" target="_blank" rel="noopener noreferrer">Meta Sci</a> · Shenzhen / Hong Kong</p>
+      <p class="tagline">The statistical physics of collective silence — how coordinated withdrawal emerges, propagates, and can be detected before collapse.</p>
+      <p class="formula"><span class="ink">c ∝ √D</span></p>
+
+      <nav class="links">
+        <a href="mailto:haoranzhang.cmplx@proton.me">[email]</a>
+        <a href="https://orcid.org/0009-0002-5585-1104" target="_blank" rel="noopener noreferrer">[ORCID]</a>
+        <a href="https://github.com/haoranzhang-research" target="_blank" rel="noopener noreferrer">[GitHub]</a>
+      </nav>
+    </header>
+
+    <hr class="rule" />
+
+    <!-- ── §1 RESEARCH ──────────────────────────── -->
+    <section>
+      <h2 class="section-label">§1 Research</h2>
+      <p>
+        My work sits at the intersection of <strong>statistical physics</strong>, <strong>systemic risk</strong>, and the
+        <strong>governance of multi-agent systems</strong>. The central hypothesis: systemic risk in human–AI hybrid systems is
+        driven by spatiotemporal mismatch × nonlocal coupling × reflexive feedback — not by the failure of any individual agent.
+      </p>
+
+      <p class="hint">Five questions organize the program:</p>
+
+      <ol class="questions">
+        <li><span class="num">1.</span><span><strong>Mechanism</strong> — Do coordinated withdrawals in markets, compute supply, and AI agent collectives share one propagation mechanism?</span></li>
+        <li><span class="num">2.</span><span><strong>Legitimacy</strong> — When is a phenomenological field equation the controlled limit of its underlying stochastic agents, and where does it fail?</span></li>
+        <li><span class="num">3.</span><span><strong>Observability</strong> — Which early-warning signals remain faithful to a coarse-grained observer, and which fail silently near the transition?</span></li>
+        <li><span class="num">4.</span><span><strong>Controllability</strong> — Given the mechanism and trustworthy instruments, what is the minimal intervention that steers a system away from criticality?</span></li>
+        <li><span class="num">5.</span><span><strong>Human primacy as a constraint</strong> — What does optimal intervention look like when critical control variables must remain on human timescales?</span></li>
+      </ol>
+
+      <p class="hint" style="margin-top:1.5rem">Questions 1–3 have published or submitted results; 4–5 are the road ahead.</p>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- ── §2 PUBLICATIONS ──────────────────────── -->
+    <section>
+      <h2 class="section-label">§2 Publications</h2>
+      <ul class="pubs">
+        <li>
+          <a class="pub-title" href="https://doi.org/10.1016/j.physa.2025.131161" target="_blank" rel="noopener noreferrer">Early Warning of Financial Crises Through Critical Field Dynamics: A Nonlocal Trend-Inhibition Delay Equation Framework</a>
+          <div class="pub-meta">
+            <span>Physica A 682 (2026) 131161</span>
+            <span class="accent">[published]</span>
+          </div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1016/j.physa.2025.131161" target="_blank" rel="noopener noreferrer">doi: 10.1016/j.physa.2025.131161</a>
+            <a href="https://doi.org/10.5281/zenodo.20746031" target="_blank" rel="noopener noreferrer">code: doi.org/10.5281/zenodo.20746031</a>
+          </div>
+          <ul class="notes">
+            <li><span class="bullet" aria-hidden="true">·</span><span class="pretty">Formulated the Nonlocal Trend-Inhibition Delay Equation (NTIDE) framework by extending the Ginzburg–Landau / Allen–Cahn family with nonlocal coupling, trend-sensitive inhibition, and heterogeneous delays.</span></li>
+            <li><span class="bullet" aria-hidden="true">·</span><span class="pretty">Derived an interpretable stability margin and propagation-aware hazard score, and evaluated the framework under a causal protocol across seven crisis episodes.</span></li>
+            <li><span class="bullet" aria-hidden="true">·</span><span class="pretty">Tested model-implied predictions including the front-velocity scaling law c ∝ √D and convergence of independent critical indicators near a common threshold.</span></li>
+          </ul>
+        </li>
+        <li>
+          <a class="pub-title" href="https://doi.org/10.5281/zenodo.21010527" target="_blank" rel="noopener noreferrer">When Does a Nonlocal Delayed Field Model Follow from Stochastic Agents? A Transferable Closure and Its Validity Map</a>
+          <div class="pub-meta">
+            <span>Submitted to Physical Review E</span>
+            <span class="ink">[submitted]</span>
+          </div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.5281/zenodo.21010527" target="_blank" rel="noopener noreferrer">code: doi.org/10.5281/zenodo.21010527</a>
+          </div>
+          <ul class="notes">
+            <li><span class="bullet" aria-hidden="true">·</span><span class="pretty">Derives a single dispersion relation for a delimited class of binary agent models and charts a quantitative validity map — including a monitoring-validity boundary δ* ~ (NK)^(−1/2) separating trustworthy from silently-failing early-warning signals.</span></li>
+          </ul>
+        </li>
+        <li>
+          <span class="pub-title">Supply-Side Silence Waves in Decentralized Compute Markets</span>
+          <div class="pub-meta">
+            <span>In preparation</span>
+            <span class="ink">[in prep]</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- ── §3 ABOUT ─────────────────────────────── -->
+    <section>
+      <h2 class="section-label">§3 About</h2>
+      <p>
+        I am an independent researcher working on nonequilibrium field dynamics of collective behavior. My path is unconventional: a
+        security-engineering background (Tencent; national CTF champion), several years building multi-agent digital systems, and
+        self-directed training in stochastic processes, PDEs, and statistical mechanics — which converged into a sustained research
+        program on how populations of interacting agents destabilize, and how a supervisor watching only aggregate signals can see it
+        coming. I publish as sole author under <strong><a class="inline-link" href="https://metasci.co" target="_blank" rel="noopener noreferrer">Meta Sci</a></strong>, the research studio I founded, and release reproduction code
+        with every result.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    function setTheme(dark) {
+      document.documentElement.classList.toggle('dark', dark);
+      try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+      var isDark = document.documentElement.classList.contains('dark');
+      document.getElementById('btn-dark').classList.toggle('active', isDark);
+      document.getElementById('btn-light').classList.toggle('active', !isDark);
+    }
+    setTheme(document.documentElement.classList.contains('dark'));
+  </script>
+</body>
+</html>
