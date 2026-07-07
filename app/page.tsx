@@ -26,11 +26,11 @@ const questions = [
   },
   {
     label: 'Controllability',
-    q: 'Given the mechanism and trustworthy instruments, what is the minimal intervention that steers a system away from criticality?',
+    q: "What is the minimal intervention a coarse-grained controller — one that observes and actuates only aggregate variables — can apply to steer a system away from criticality, and when is it provably effective despite the observer's blind spots?",
   },
   {
-    label: 'Human primacy as a constraint',
-    q: 'What does optimal intervention look like when critical control variables must remain on human timescales?',
+    label: 'Human primacy as a timescale constraint',
+    q: 'Which interventions remain effective when the critical control variables must stay on human, not machine, timescales — so that the very mismatch that drives the risk becomes the binding constraint on its governance?',
   },
 ]
 
