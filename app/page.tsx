@@ -13,24 +13,24 @@ const links = [
 
 const questions = [
   {
-    label: 'Mechanism',
-    q: 'Do coordinated withdrawals in markets, compute supply, and AI agent collectives share one propagation mechanism?',
+    label: 'Admissibility',
+    q: 'What properties must a real system possess before a delayed, nonlocal field description has mechanistic meaning? Are there dynamically sufficient coarse variables, identifiable response delays, cross-unit interactions, and a closed action-to-state feedback loop?',
   },
   {
-    label: 'Legitimacy',
-    q: 'When is a phenomenological field equation the controlled limit of its underlying stochastic agents, and where does it fail?',
+    label: 'Closure and validity',
+    q: 'Once an admissible stochastic agent model is identified, when does it reduce to a nonlocal delayed field equation, and where does that reduction fail because of finite size, heterogeneous delays, nonlinearities, or missing state variables?',
   },
   {
     label: 'Observability',
-    q: 'Which early-warning signals remain faithful to a coarse-grained observer, and which fail silently near the transition?',
+    q: "Can a finite, coarse-grained observer recover the system's stability margin from partial and noisy measurements? Which early-warning signals remain faithful near a transition, and which fail silently?",
   },
   {
-    label: 'Controllability',
-    q: "What is the minimal intervention a coarse-grained controller — one that observes and actuates only aggregate variables — can apply to steer a system away from criticality, and when is it provably effective despite the observer's blind spots?",
+    label: 'Multi-field dynamics',
+    q: 'How do human decisions, AI workloads, information or price signals, and physical computing resources interact across unequal timescales? When can these coupled fields be reduced without erasing the mechanism that drives instability?',
   },
   {
-    label: 'Human primacy as a timescale constraint',
-    q: 'Which interventions remain effective when the critical control variables must stay on human, not machine, timescales — so that the very mismatch that drives the risk becomes the binding constraint on its governance?',
+    label: 'Control and human-timescale governance',
+    q: 'What is the minimal intervention available to a controller that observes and actuates only aggregate variables? Which interventions remain effective when critical authority must stay on human rather than machine timescales?',
   },
 ]
 
@@ -65,7 +65,8 @@ const publications = [
     ],
   },
   {
-    title: 'Supply-Side Silence Waves in Decentralized Compute Markets',
+    title:
+      'Preconditions for Collective Failure in Decentralized Compute Markets: An Empirical Admissibility Test for Nonlocal Delayed Field Models',
     titleHref: null,
     venue: 'In preparation',
     status: 'in prep',
@@ -127,11 +128,13 @@ export default function Page() {
           · Shenzhen / Hong Kong
         </p>
         <p className="mt-2 font-serif text-lg italic text-pretty">
-          The statistical physics of collective silence — how coordinated
-          withdrawal emerges, propagates, and can be detected before collapse.
+          From agents to fields — when collective dynamics are real, observable,
+          and controllable.
         </p>
         <p className="mt-4 font-mono text-sm text-ink-soft">
-          <span className="text-ink">c ∝ √D</span>
+          <span className="text-ink">agents</span> → admissibility →{' '}
+          <span className="text-ink">fields</span> → monitoring →{' '}
+          <span className="text-ink">control</span>
         </p>
 
         <nav className="mt-6 flex flex-wrap gap-x-4 gap-y-1 font-mono text-sm">
@@ -162,9 +165,19 @@ export default function Page() {
           <strong className="font-semibold">
             governance of multi-agent systems
           </strong>
-          . The central hypothesis: systemic risk in human–AI hybrid systems is
-          driven by spatiotemporal mismatch × nonlocal coupling × reflexive
-          feedback — not by the failure of any individual agent.
+          . I study when heterogeneous human and machine agents can be reduced
+          to interpretable mesoscopic field dynamics, where those reductions
+          remain valid, and whether they can support reliable monitoring and
+          control.
+        </p>
+
+        <p className="mt-4 text-pretty">
+          The guiding premise is conditional rather than universal: systemic
+          instability may emerge from timescale mismatch, nonlocal coupling, and
+          reflexive feedback — but only when the underlying system contains an
+          identifiable closed loop from state, through interaction and agent
+          response, back to aggregate state. Not every multi-agent system
+          satisfies this condition.
         </p>
 
         <p className="mt-4 font-mono text-sm text-ink-soft">
@@ -187,8 +200,10 @@ export default function Page() {
         </ol>
 
         <p className="mt-6 font-mono text-sm text-ink-soft">
-          Questions 1–3 have published or submitted results; 4–5 are the road
-          ahead.
+          The closure and early-warning questions have published or submitted
+          results. Empirical admissibility is the focus of my current
+          compute-market observatory, while multi-field reduction and
+          timescale-constrained control define the next stage of the program.
         </p>
       </section>
 
@@ -264,15 +279,26 @@ export default function Page() {
       {/* ── §3 ABOUT ─────────────────────────────── */}
       <section>
         <SectionLabel>§3 About</SectionLabel>
-        <p className="mt-4">
-          I am an independent researcher working on nonequilibrium field
-          dynamics of collective behavior. My path is unconventional: a
-          security-engineering background (Tencent; national CTF champion),
-          several years building multi-agent digital systems, and self-directed
-          training in stochastic processes, PDEs, and statistical mechanics —
-          which converged into a sustained research program on how populations
-          of interacting agents destabilize, and how a supervisor watching only
-          aggregate signals can see it coming. I publish as sole author under{' '}
+        <p className="mt-4 text-pretty">
+          I am an independent researcher working on the statistical physics of
+          collective systems: when interacting agents can be reduced to fields,
+          when those fields can be trusted, and whether instability can be seen
+          and controlled before failure.
+        </p>
+
+        <p className="mt-4 text-pretty">
+          My path is unconventional. I began in security engineering at Tencent,
+          competed in cybersecurity challenges, and spent several years building
+          and operating multi-agent digital systems. Alongside that work, I
+          trained independently in stochastic processes, PDEs, statistical
+          mechanics, nonlinear dynamics, and scientific computing. These threads
+          converged into a single research program: field admissibility,
+          stochastic microfoundations, finite-size effects, early warning, and
+          timescale-constrained control in human–AI systems.
+        </p>
+
+        <p className="mt-4 text-pretty">
+          I conduct and publish this work through{' '}
           <a
             href="https://metasci.co"
             target="_blank"
@@ -281,8 +307,8 @@ export default function Page() {
           >
             Meta Sci
           </a>
-          , the research studio I founded, and release reproduction code with
-          every result.
+          , the independent research studio I founded, and release open
+          reproducibility code with each major result.
         </p>
       </section>
     </main>

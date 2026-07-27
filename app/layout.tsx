@@ -19,23 +19,23 @@ const SITE_URL = 'https://haoranzhang.example'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Haoran Zhang — statistical physics of collective silence',
+  title: 'Haoran Zhang — statistical physics of collective systems',
   description:
-    'Haoran Zhang, independent researcher (Meta Sci). Nonequilibrium field dynamics of collective behavior: the mechanism, legitimacy, observability, and controllability of collective silence in human–AI systems.',
+    'Haoran Zhang, independent researcher (Meta Sci). From agents to fields: field admissibility, stochastic microfoundations, finite-size effects, early warning, and timescale-constrained control in human–AI systems.',
   generator: 'v0.app',
   openGraph: {
     type: 'profile',
-    title: 'Haoran Zhang — statistical physics of collective silence',
+    title: 'Haoran Zhang — statistical physics of collective systems',
     description:
-      'Independent researcher studying how coordinated withdrawal emerges, propagates, and can be detected before collapse.',
+      'From agents to fields — when collective dynamics are real, observable, and controllable.',
     url: SITE_URL,
     siteName: 'Haoran Zhang',
   },
   twitter: {
     card: 'summary',
-    title: 'Haoran Zhang — statistical physics of collective silence',
+    title: 'Haoran Zhang — statistical physics of collective systems',
     description:
-      'Independent researcher studying the collective dynamics of silence.',
+      'From agents to fields — when collective dynamics are real, observable, and controllable.',
   },
 }
 
