@@ -15,27 +15,30 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 })
 
-const SITE_URL = 'https://haoranzhang.example'
+const SITE_URL = 'https://haoranzhang-research.github.io'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Haoran Zhang — statistical physics of collective systems',
+  title: 'Haoran Zhang — from agents to fields',
   description:
-    'Haoran Zhang, independent researcher (Meta Sci). From agents to fields: field admissibility, stochastic microfoundations, finite-size effects, early warning, and timescale-constrained control in human–AI systems.',
+    'Haoran Zhang is an independent researcher at Meta Sci studying empirical field admissibility, stochastic agent-to-field closure, finite-size early-warning limits, and collective-system control.',
+  alternates: {
+    canonical: SITE_URL,
+  },
   generator: 'v0.app',
   openGraph: {
     type: 'profile',
-    title: 'Haoran Zhang — statistical physics of collective systems',
+    title: 'Haoran Zhang — from agents to fields',
     description:
-      'From agents to fields — when collective dynamics are real, observable, and controllable.',
+      'Empirical admissibility, stochastic closure, finite-size monitoring, and collective-system control.',
     url: SITE_URL,
     siteName: 'Haoran Zhang',
   },
   twitter: {
     card: 'summary',
-    title: 'Haoran Zhang — statistical physics of collective systems',
+    title: 'Haoran Zhang — from agents to fields',
     description:
-      'From agents to fields — when collective dynamics are real, observable, and controllable.',
+      'Empirical admissibility, stochastic closure, finite-size monitoring, and collective-system control.',
   },
 }
 

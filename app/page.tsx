@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { ThemeToggle } from '@/components/theme-toggle'
 
 export const metadata: Metadata = {
-  title: 'Haoran Zhang — statistical physics of collective silence',
+  title: 'Haoran Zhang — from agents to fields',
 }
 
 const links = [
@@ -42,36 +42,25 @@ const publications = [
     venue: 'Physica A 682 (2026) 131161',
     status: 'published',
     links: [
-      { label: 'doi', text: '10.1016/j.physa.2025.131161', href: 'https://doi.org/10.1016/j.physa.2025.131161' },
-      { label: 'code', text: 'doi.org/10.5281/zenodo.20746031', href: 'https://doi.org/10.5281/zenodo.20746031' },
+      { label: 'paper', href: 'https://doi.org/10.1016/j.physa.2025.131161' },
+      { label: 'code', href: 'https://doi.org/10.5281/zenodo.21772041' },
     ],
     notes: [
-      'Formulated the Nonlocal Trend-Inhibition Delay Equation (NTIDE) framework by extending the Ginzburg–Landau / Allen–Cahn family with nonlocal coupling, trend-sensitive inhibition, and heterogeneous delays.',
-      'Derived an interpretable stability margin and propagation-aware hazard score, and evaluated the framework under a causal protocol across seven crisis episodes.',
-      'Tested model-implied predictions including the front-velocity scaling law c ∝ √D and convergence of independent critical indicators near a common threshold.',
+      'Introduces NTIDE as an interpretable nonlocal delayed-field framework for studying financial instability and early-warning signals.',
     ],
   },
   {
     title:
-      'When Does a Nonlocal Delayed Field Model Follow from Stochastic Agents? A Transferable Closure and Its Validity Map',
-    titleHref: 'https://doi.org/10.5281/zenodo.21010527',
-    venue: 'Submitted to Physical Review E',
+      'Finite-size limits of variance-based early warning in delayed stochastic-agent fields',
+    titleHref: null,
+    venue: 'Manuscript under review',
     status: 'submitted',
     links: [
-      { label: 'code', text: 'doi.org/10.5281/zenodo.21010527', href: 'https://doi.org/10.5281/zenodo.21010527' },
+      { label: 'code', href: 'https://doi.org/10.5281/zenodo.21771415' },
     ],
     notes: [
-      'Derives a single dispersion relation for a delimited class of binary agent models and charts a quantitative validity map — including a monitoring-validity boundary δ* ~ (NK)^(−1/2) separating trustworthy from silently-failing early-warning signals.',
+      'Studies how local occupancy and total population constrain variance-based early warning near delayed instabilities.',
     ],
-  },
-  {
-    title:
-      'Preconditions for Collective Failure in Decentralized Compute Markets: An Empirical Admissibility Test for Nonlocal Delayed Field Models',
-    titleHref: null,
-    venue: 'In preparation',
-    status: 'in prep',
-    links: [],
-    notes: [],
   },
 ]
 
@@ -200,10 +189,12 @@ export default function Page() {
         </ol>
 
         <p className="mt-6 font-mono text-sm text-ink-soft">
-          The closure and early-warning questions have published or submitted
-          results. Empirical admissibility is the focus of my current
-          compute-market observatory, while multi-field reduction and
-          timescale-constrained control define the next stage of the program.
+          The published paper introduces NTIDE as a phenomenological framework
+          for financial early warning. A manuscript under review tests the
+          finite-size limits of variance-based warning in delayed
+          stochastic-agent fields. My current work examines when marketplace
+          observations justify coarse-grained field models, using GPU compute
+          markets as an empirical test case.
         </p>
       </section>
 
@@ -249,7 +240,7 @@ export default function Page() {
                       rel="noopener noreferrer"
                       className="text-accent underline-offset-4 hover:underline"
                     >
-                      {link.label}: {link.text}
+                      [{link.label}]
                     </a>
                   ))}
                 </div>
