@@ -19,26 +19,26 @@ const SITE_URL = 'https://haoranzhang-research.github.io'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Haoran Zhang — from agents to fields',
+  title: 'Haoran Zhang — learning dynamics',
   description:
-    'Haoran Zhang is an independent researcher at Meta Sci studying empirical field admissibility, stochastic agent-to-field closure, finite-size early-warning limits, and collective-system control.',
+    'Haoran Zhang is an independent researcher studying optimizer state, finite-horizon learning dynamics, effective predictive states, and approximate closure.',
   alternates: {
     canonical: SITE_URL,
   },
   generator: 'v0.app',
   openGraph: {
     type: 'profile',
-    title: 'Haoran Zhang — from agents to fields',
+    title: 'Haoran Zhang — learning dynamics',
     description:
-      'Empirical admissibility, stochastic closure, finite-size monitoring, and collective-system control.',
+      'Learning dynamics, optimizer state, effective predictive states, and approximate closure.',
     url: SITE_URL,
     siteName: 'Haoran Zhang',
   },
   twitter: {
     card: 'summary',
-    title: 'Haoran Zhang — from agents to fields',
+    title: 'Haoran Zhang — learning dynamics',
     description:
-      'Empirical admissibility, stochastic closure, finite-size monitoring, and collective-system control.',
+      'Learning dynamics, optimizer state, effective predictive states, and approximate closure.',
   },
 }
 
@@ -64,6 +64,13 @@ const personJsonLd = {
   sameAs: [
     'https://orcid.org/0009-0002-5585-1104',
     'https://github.com/haoranzhang-research',
+  ],
+  knowsAbout: [
+    'Learning dynamics',
+    'Stochastic optimization',
+    'Optimizer state',
+    'Statistical physics of learning',
+    'Effective predictive states',
   ],
 }
 

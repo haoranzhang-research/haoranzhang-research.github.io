@@ -7,3 +7,8 @@
 
 .env*
 !.env.example
+public/files/haoran-zhang-academic-cv.pdf
+/public/files
+files/haoran-zhang-academic-cv.pdf
+files/haoran-zhang-momentum-specificity-supplement.pdf
+files/haoran-zhang-momentum-specificity-tmlr.pdf

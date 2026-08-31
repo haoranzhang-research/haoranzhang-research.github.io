@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { ThemeToggle } from '@/components/theme-toggle'
 
 export const metadata: Metadata = {
-  title: 'Haoran Zhang — from agents to fields',
+  title: 'Haoran Zhang — learning dynamics',
 }
 
 const links = [
@@ -13,28 +13,32 @@ const links = [
 
 const questions = [
   {
-    label: 'Admissibility',
-    q: 'What properties must a real system possess before a delayed, nonlocal field description has mechanistic meaning? Are there dynamically sufficient coarse variables, identifiable response delays, cross-unit interactions, and a closed action-to-state feedback loop?',
+    label: 'Intervention activity',
+    q: 'My current manuscript finds finite-horizon intervention activity in the tested SGDM systems. Evidence for native-direction and recurrent-persistence specificity varies across settings and regimes; native-direction ordering also changes under an alternative matching contract.',
   },
   {
-    label: 'Closure and validity',
-    q: 'Once an admissible stochastic agent model is identified, when does it reduce to a nonlocal delayed field equation, and where does that reduction fail because of finite size, heterogeneous delays, nonlinearities, or missing state variables?',
+    label: 'Local response',
+    q: 'When can the effect of optimizer memory be represented using local geometric information, and when does that approximation break down as the reference state becomes stale or activation patterns change?',
   },
   {
-    label: 'Observability',
-    q: "Can a finite, coarse-grained observer recover the system's stability margin from partial and noisy measurements? Which early-warning signals remain faithful near a transition, and which fail silently?",
-  },
-  {
-    label: 'Multi-field dynamics',
-    q: 'How do human decisions, AI workloads, information or price signals, and physical computing resources interact across unequal timescales? When can these coupled fields be reduced without erasing the mechanism that drives instability?',
-  },
-  {
-    label: 'Control and human-timescale governance',
-    q: 'What is the minimal intervention available to a controller that observes and actuates only aggregate variables? Which interventions remain effective when critical authority must stay on human rather than machine timescales?',
+    label: 'Predictive state',
+    q: "Without observing future minibatches, what information must be retained at the forecast origin? Ongoing work compares weights, local geometry, optimizer memory, and the optimizer state's immediate function-space action, then asks whether earlier history still adds practically relevant predictive information at a declared horizon.",
   },
 ]
 
 const publications = [
+  {
+    title:
+      'When Does Inherited Momentum Appear Special? Matching-Dependent Evidence from Position-Matched Interventions',
+    titleHref: null,
+    venue:
+      'Manuscript submitted to Transactions on Machine Learning Research (TMLR), 2026',
+    status: 'submitted',
+    links: [],
+    notes: [
+      'Uses position-matched SGDM interventions, paired future minibatches, an explicit open-loop comparator, and direction × persistence controls to separate finite-horizon intervention activity from claims of intrinsic momentum specificity.',
+    ],
+  },
   {
     title:
       'Early Warning of Financial Crises Through Critical Field Dynamics: A Nonlocal Trend-Inhibition Delay Equation Framework',
@@ -43,23 +47,13 @@ const publications = [
     status: 'published',
     links: [
       { label: 'paper', href: 'https://doi.org/10.1016/j.physa.2025.131161' },
-      { label: 'code', href: 'https://doi.org/10.5281/zenodo.21772041' },
+      {
+        label: 'reproduction',
+        href: 'https://doi.org/10.5281/zenodo.21771606',
+      },
     ],
     notes: [
-      'Introduces NTIDE as an interpretable nonlocal delayed-field framework for studying financial instability and early-warning signals.',
-    ],
-  },
-  {
-    title:
-      'Finite-size limits of variance-based early warning in delayed stochastic-agent fields',
-    titleHref: null,
-    venue: 'Manuscript under review',
-    status: 'submitted',
-    links: [
-      { label: 'code', href: 'https://doi.org/10.5281/zenodo.21771415' },
-    ],
-    notes: [
-      'Studies how local occupancy and total population constrain variance-based early warning near delayed instabilities.',
+      'Develops a nonlocal trend-inhibition delay equation and evaluates propagation-aware early-warning measures across seven crisis episodes under a strictly forward-looking, no-lookahead protocol.',
     ],
   },
 ]
@@ -117,13 +111,12 @@ export default function Page() {
           · Shenzhen / Hong Kong
         </p>
         <p className="mt-2 font-serif text-lg italic text-pretty">
-          From agents to fields — when collective dynamics are real, observable,
-          and controllable.
+          What must a learning system remember to predict what happens next?
         </p>
         <p className="mt-4 font-mono text-sm text-ink-soft">
-          <span className="text-ink">agents</span> → admissibility →{' '}
-          <span className="text-ink">fields</span> → monitoring →{' '}
-          <span className="text-ink">control</span>
+          <span className="text-ink">optimizer history</span> → finite-horizon
+          response → <span className="text-ink">predictive state</span> →
+          coarse-graining
         </p>
 
         <nav className="mt-6 flex flex-wrap gap-x-4 gap-y-1 font-mono text-sm">
@@ -148,29 +141,16 @@ export default function Page() {
       <section>
         <SectionLabel>§1 Research</SectionLabel>
         <p className="mt-4">
-          My work sits at the intersection of{' '}
-          <strong className="font-semibold">statistical physics</strong>,{' '}
-          <strong className="font-semibold">systemic risk</strong>, and the{' '}
-          <strong className="font-semibold">
-            governance of multi-agent systems
-          </strong>
-          . I study when heterogeneous human and machine agents can be reduced
-          to interpretable mesoscopic field dynamics, where those reductions
-          remain valid, and whether they can support reliable monitoring and
-          control.
+          My research asks what information is needed to describe and predict an
+          evolving learning system. I study how optimizer state and local geometry
+          shape finite-horizon neural-network dynamics, and when training history
+          can be compressed into an effective predictive state.
         </p>
 
         <p className="mt-4 text-pretty">
-          The guiding premise is conditional rather than universal: systemic
-          instability may emerge from timescale mismatch, nonlocal coupling, and
-          reflexive feedback — but only when the underlying system contains an
-          identifiable closed loop from state, through interaction and agent
-          response, back to aggregate state. Not every multi-agent system
-          satisfies this condition.
-        </p>
-
-        <p className="mt-4 font-mono text-sm text-ink-soft">
-          Five questions organize the program:
+          I use position-matched interventions, function-space measurements,
+          future-blind prediction, and reproducible computational experiments.
+          Three questions organize the current programme:
         </p>
 
         <ol className="mt-4 space-y-3">
@@ -181,7 +161,7 @@ export default function Page() {
               </span>
               <span>
                 <strong className="font-semibold">{item.label}</strong>
-                {' — '}
+                {': '}
                 {item.q}
               </span>
             </li>
@@ -189,12 +169,9 @@ export default function Page() {
         </ol>
 
         <p className="mt-6 font-mono text-sm text-ink-soft">
-          The published paper introduces NTIDE as a phenomenological framework
-          for financial early warning. A manuscript under review tests the
-          finite-size limits of variance-based warning in delayed
-          stochastic-agent fields. My current work examines when marketplace
-          observations justify coarse-grained field models, using GPU compute
-          markets as an empirical test case.
+          My earlier Physica A paper studied early warning in collective financial
+          dynamics. That work remains part of the path to the present question,
+          while learning dynamics is now my main research focus.
         </p>
       </section>
 
@@ -271,25 +248,21 @@ export default function Page() {
       <section>
         <SectionLabel>§3 About</SectionLabel>
         <p className="mt-4 text-pretty">
-          I am an independent researcher working on the statistical physics of
-          collective systems: when interacting agents can be reduced to fields,
-          when those fields can be trusted, and whether instability can be seen
-          and controlled before failure.
+          I am an independent researcher at Meta Sci working on learning dynamics,
+          stochastic optimization, and effective predictive states.
         </p>
 
         <p className="mt-4 text-pretty">
-          My path is unconventional. I began in security engineering at Tencent,
-          competed in cybersecurity challenges, and spent several years building
-          and operating multi-agent digital systems. Alongside that work, I
-          trained independently in stochastic processes, PDEs, statistical
-          mechanics, nonlinear dynamics, and scientific computing. These threads
-          converged into a single research program: field admissibility,
-          stochastic microfoundations, finite-size effects, early warning, and
-          timescale-constrained control in human–AI systems.
+          My route into learning dynamics began in cybersecurity, multi-agent
+          digital systems, and quantitative decision tools. Across these settings,
+          I repeatedly encountered the same difficulty: outcomes were easier to
+          observe than the hidden state needed to explain or predict them. Learning
+          dynamics provides a setting in which that question can be tested through
+          controlled intervention.
         </p>
 
         <p className="mt-4 text-pretty">
-          I conduct and publish this work through{' '}
+          I conduct this work independently through{' '}
           <a
             href="https://metasci.co"
             target="_blank"
@@ -298,8 +271,8 @@ export default function Page() {
           >
             Meta Sci
           </a>
-          , the independent research studio I founded, and release open
-          reproducibility code with each major result.
+          , where I develop and release versioned code, protocols, and evidence
+          packages alongside major results.
         </p>
       </section>
     </main>

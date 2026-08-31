@@ -1,9 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Discrete agents resolving into a continuous field front">
-  <rect width="32" height="32" rx="7" fill="#161512"/>
-  <g fill="#FAFAF7">
-    <circle cx="4.6" cy="24.29" r="2.05" fill-opacity="0.42"/>
-    <circle cx="8.2" cy="23.89" r="2.05" fill-opacity="0.63"/>
-    <circle cx="11.2" cy="22.62" r="2.05" fill-opacity="0.86"/>
-  </g>
-  <path d="M 12.60 21.36 L 13.36 20.43 L 14.12 19.32 L 14.88 18.05 L 15.64 16.67 L 16.40 15.26 L 17.16 13.88 L 17.92 12.62 L 18.68 11.52 L 19.44 10.59 L 20.20 9.85 L 20.96 9.27 L 21.72 8.83 L 22.48 8.49 L 23.24 8.25 L 24.00 8.07 L 24.76 7.94 L 25.52 7.84 L 26.28 7.77 L 27.04 7.72 L 27.80 7.69" fill="none" stroke="#B33A2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Meta Sci orbit mark">
+  <style>
+    .ring { stroke: #1a1a17; }
+    .node { fill: #eb6449; }
+    @media (prefers-color-scheme: dark) {
+      .ring { stroke: #f5f5ee; }
+    }
+  </style>
+  <circle class="ring" cx="15" cy="17" r="9" fill="none" stroke-width="1.75" />
+  <circle class="node" cx="23" cy="9" r="3.25" />
 </svg>

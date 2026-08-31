@@ -3,30 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Haoran Zhang — from agents to fields</title>
-  <meta name="description" content="Haoran Zhang is an independent researcher at Meta Sci studying empirical field admissibility, stochastic agent-to-field closure, finite-size early-warning limits, and collective-system control." />
+  <title>Haoran Zhang — learning dynamics</title>
+  <meta name="description" content="Haoran Zhang is an independent researcher studying optimizer state, finite-horizon learning dynamics, effective predictive states, and approximate closure." />
   <link rel="canonical" href="https://haoranzhang-research.github.io/" />
   <meta name="color-scheme" content="light dark" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0c0c0c" media="(prefers-color-scheme: dark)" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="profile" />
-  <meta property="og:title" content="Haoran Zhang — from agents to fields" />
-  <meta property="og:description" content="Empirical admissibility, stochastic closure, finite-size monitoring, and collective-system control." />
+  <meta property="og:title" content="Haoran Zhang — learning dynamics" />
+  <meta property="og:description" content="Learning dynamics, optimizer state, effective predictive states, and approximate closure." />
   <meta property="og:url" content="https://haoranzhang-research.github.io/" />
   <meta property="og:site_name" content="Haoran Zhang" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Haoran Zhang — from agents to fields" />
-  <meta name="twitter:description" content="Empirical admissibility, stochastic closure, finite-size monitoring, and collective-system control." />
+  <meta name="twitter:title" content="Haoran Zhang — learning dynamics" />
+  <meta name="twitter:description" content="Learning dynamics, optimizer state, effective predictive states, and approximate closure." />
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
 
-  <!-- Prevent theme flash: apply saved/preferred theme before paint -->
   <script>
     (function () {
       try {
@@ -48,6 +45,13 @@
     "sameAs": [
       "https://orcid.org/0009-0002-5585-1104",
       "https://github.com/haoranzhang-research"
+    ],
+    "knowsAbout": [
+      "Learning dynamics",
+      "Stochastic optimization",
+      "Optimizer state",
+      "Statistical physics of learning",
+      "Effective predictive states"
     ]
   }
   </script>
@@ -74,9 +78,7 @@
     }
 
     * { box-sizing: border-box; }
-
     html { background-color: var(--paper); }
-
     body {
       margin: 0;
       background-color: var(--paper);
@@ -86,13 +88,9 @@
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
-
     ::selection { background: var(--accent); color: var(--paper); }
-
     a { color: inherit; }
-
     strong { font-weight: 600; }
-
     .mono { font-family: var(--font-mono); }
     .ink-soft { color: var(--ink-soft); }
     .accent { color: var(--accent); }
@@ -100,7 +98,6 @@
     a.inline-link:hover { text-decoration: underline; }
     .ink { color: var(--ink); }
 
-    /* Layout */
     main {
       max-width: 68ch;
       margin: 0 auto;
@@ -116,9 +113,7 @@
       margin: 3rem 0;
     }
 
-    /* Header */
     header { position: relative; }
-
     .header-curve {
       pointer-events: none;
       position: absolute;
@@ -129,14 +124,12 @@
       opacity: 0.1;
       color: var(--ink);
     }
-
     .header-top {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       gap: 1rem;
     }
-
     h1 {
       margin: 0;
       font-size: 2.25rem;
@@ -147,7 +140,6 @@
     @media (min-width: 640px) {
       h1 { font-size: 3rem; }
     }
-
     .affil { margin: 0.75rem 0 0; font-family: var(--font-mono); font-size: 0.875rem; color: var(--ink-soft); }
     .tagline { margin: 0.5rem 0 0; font-family: var(--font-serif); font-style: italic; font-size: 1.125rem; text-wrap: pretty; }
     .formula { margin: 1rem 0 0; font-family: var(--font-mono); font-size: 0.875rem; color: var(--ink-soft); }
@@ -163,7 +155,6 @@
     nav.links a { color: var(--accent); text-decoration: none; text-underline-offset: 4px; }
     nav.links a:hover { text-decoration: underline; }
 
-    /* Theme toggle */
     .toggle {
       padding-top: 0.5rem;
       font-family: var(--font-mono);
@@ -183,7 +174,6 @@
     .toggle button:hover { color: var(--ink); }
     .toggle button.active { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 
-    /* Section labels */
     h2.section-label {
       margin: 0;
       font-family: var(--font-mono);
@@ -192,24 +182,19 @@
       text-transform: uppercase;
       color: var(--ink-soft);
     }
-
     section p { margin: 1rem 0 0; }
     p.hint { font-family: var(--font-mono); font-size: 0.875rem; color: var(--ink-soft); }
 
-    /* Research list */
     ol.questions { list-style: none; margin: 1rem 0 0; padding: 0; }
     ol.questions li { display: flex; gap: 0.75rem; margin-top: 0.75rem; }
     ol.questions .num { font-family: var(--font-mono); font-size: 0.875rem; color: var(--ink-soft); user-select: none; }
 
-    /* Publications */
     ul.pubs { list-style: none; margin: 1.5rem 0 0; padding: 0; }
     ul.pubs > li { margin-top: 2rem; }
     ul.pubs > li:first-child { margin-top: 0; }
-
     .pub-title { font-size: 1.125rem; font-weight: 500; line-height: 1.35; }
     a.pub-title { color: var(--accent); text-decoration: none; text-underline-offset: 4px; }
     a.pub-title:hover { text-decoration: underline; }
-
     .pub-meta {
       margin-top: 0.25rem;
       display: flex;
@@ -220,7 +205,6 @@
       font-size: 0.875rem;
       color: var(--ink-soft);
     }
-
     .pub-links {
       margin-top: 0.25rem;
       display: flex;
@@ -231,13 +215,11 @@
     }
     .pub-links a { color: var(--accent); text-decoration: none; text-underline-offset: 4px; }
     .pub-links a:hover { text-decoration: underline; }
-
     ul.notes { list-style: none; margin: 0.75rem 0 0; padding: 0; }
     ul.notes li { display: flex; gap: 0.75rem; margin-top: 0.5rem; color: var(--ink-soft); }
     ul.notes .bullet { font-family: var(--font-mono); color: var(--accent); user-select: none; }
     .pretty { text-wrap: pretty; }
 
-    /* Header curve one-time draw */
     @keyframes draw-curve {
       from { stroke-dashoffset: var(--curve-len); }
       to { stroke-dashoffset: 0; }
@@ -255,7 +237,6 @@
 </head>
 <body>
   <main>
-    <!-- ── Header ───────────────────────────────── -->
     <header>
       <svg class="header-curve" aria-hidden="true" viewBox="0 0 224 96" fill="none" preserveAspectRatio="none">
         <path class="curve-line"
@@ -271,8 +252,8 @@
       </div>
 
       <p class="affil">Independent researcher · <a class="inline-link" href="https://metasci.co" target="_blank" rel="noopener noreferrer">Meta Sci</a> · Shenzhen / Hong Kong</p>
-      <p class="tagline">From agents to fields — when collective dynamics are real, observable, and controllable.</p>
-      <p class="formula"><span class="ink">agents</span> → admissibility → <span class="ink">fields</span> → monitoring → <span class="ink">control</span></p>
+      <p class="tagline">What must a learning system remember to predict what happens next?</p>
+      <p class="formula"><span class="ink">optimizer history</span> → finite-horizon response → <span class="ink">predictive state</span> → coarse-graining</p>
 
       <nav class="links">
         <a href="mailto:haoranzhang.cmplx@proton.me">[email]</a>
@@ -283,42 +264,40 @@
 
     <hr class="rule" />
 
-    <!-- ── §1 RESEARCH ──────────────────────────── -->
     <section>
       <h2 class="section-label">§1 Research</h2>
       <p>
-        My work sits at the intersection of <strong>statistical physics</strong>, <strong>systemic risk</strong>, and the
-        <strong>governance of multi-agent systems</strong>. I study when heterogeneous human and machine agents can be reduced
-        to interpretable mesoscopic field dynamics, where those reductions remain valid, and whether they can support reliable
-        monitoring and control.
+        My research asks what information is needed to describe and predict an evolving learning system. I study how optimizer state and local geometry shape finite-horizon neural-network dynamics, and when training history can be compressed into an effective predictive state.
       </p>
 
       <p class="pretty" style="margin-top:1rem">
-        The guiding premise is conditional rather than universal: systemic instability may emerge from timescale mismatch,
-        nonlocal coupling, and reflexive feedback — but only when the underlying system contains an identifiable closed loop
-        from state, through interaction and agent response, back to aggregate state. Not every multi-agent system satisfies
-        this condition.
+        I use position-matched interventions, function-space measurements, future-blind prediction, and reproducible computational experiments. Three questions organize the current programme:
       </p>
 
-      <p class="hint">Five questions organize the program:</p>
-
       <ol class="questions">
-        <li><span class="num">1.</span><span><strong>Admissibility</strong> — What properties must a real system possess before a delayed, nonlocal field description has mechanistic meaning? Are there dynamically sufficient coarse variables, identifiable response delays, cross-unit interactions, and a closed action-to-state feedback loop?</span></li>
-        <li><span class="num">2.</span><span><strong>Closure and validity</strong> — Once an admissible stochastic agent model is identified, when does it reduce to a nonlocal delayed field equation, and where does that reduction fail because of finite size, heterogeneous delays, nonlinearities, or missing state variables?</span></li>
-        <li><span class="num">3.</span><span><strong>Observability</strong> — Can a finite, coarse-grained observer recover the system&rsquo;s stability margin from partial and noisy measurements? Which early-warning signals remain faithful near a transition, and which fail silently?</span></li>
-        <li><span class="num">4.</span><span><strong>Multi-field dynamics</strong> — How do human decisions, AI workloads, information or price signals, and physical computing resources interact across unequal timescales? When can these coupled fields be reduced without erasing the mechanism that drives instability?</span></li>
-        <li><span class="num">5.</span><span><strong>Control and human-timescale governance</strong> — What is the minimal intervention available to a controller that observes and actuates only aggregate variables? Which interventions remain effective when critical authority must stay on human rather than machine timescales?</span></li>
+        <li><span class="num">1.</span><span><strong>Intervention activity</strong>: My current manuscript finds finite-horizon intervention activity in the tested SGDM systems. Evidence for native-direction and recurrent-persistence specificity varies across settings and regimes; native-direction ordering also changes under an alternative matching contract.</span></li>
+        <li><span class="num">2.</span><span><strong>Local response</strong>: When can the effect of optimizer memory be represented using local geometric information, and when does that approximation break down as the reference state becomes stale or activation patterns change?</span></li>
+        <li><span class="num">3.</span><span><strong>Predictive state</strong>: Without observing future minibatches, what information must be retained at the forecast origin? Ongoing work compares weights, local geometry, optimizer memory, and the optimizer state's immediate function-space action, then asks whether earlier history still adds practically relevant predictive information at a declared horizon.</span></li>
       </ol>
 
-      <p class="hint" style="margin-top:1.5rem">The published paper introduces NTIDE as a phenomenological framework for financial early warning. A manuscript under review tests the finite-size limits of variance-based warning in delayed stochastic-agent fields. My current work examines when marketplace observations justify coarse-grained field models, using GPU compute markets as an empirical test case.</p>
+      <p class="hint" style="margin-top:1.5rem">My earlier <em>Physica A</em> paper studied early warning in collective financial dynamics. That work remains part of the path to the present question, while learning dynamics is now my main research focus.</p>
     </section>
 
     <hr class="rule" />
 
-    <!-- ── §2 PUBLICATIONS ──────────────────────── -->
     <section>
       <h2 class="section-label">§2 Publications</h2>
       <ul class="pubs">
+        <li>
+          <span class="pub-title">When Does Inherited Momentum Appear Special? Matching-Dependent Evidence from Position-Matched Interventions</span>
+          <div class="pub-meta">
+            <span>Manuscript submitted to Transactions on Machine Learning Research (TMLR), 2026</span>
+            <span class="ink">[submitted]</span>
+          </div>
+          <ul class="notes">
+            <li><span class="bullet" aria-hidden="true">·</span><span class="pretty">Uses position-matched SGDM interventions, paired future minibatches, an explicit open-loop comparator, and direction × persistence controls to separate finite-horizon intervention activity from claims of intrinsic momentum specificity.</span></li>
+          </ul>
+        </li>
         <li>
           <a class="pub-title" href="https://doi.org/10.1016/j.physa.2025.131161" target="_blank" rel="noopener noreferrer">Early Warning of Financial Crises Through Critical Field Dynamics: A Nonlocal Trend-Inhibition Delay Equation Framework</a>
           <div class="pub-meta">
@@ -327,23 +306,10 @@
           </div>
           <div class="pub-links">
             <a href="https://doi.org/10.1016/j.physa.2025.131161" target="_blank" rel="noopener noreferrer">[paper]</a>
-            <a href="https://doi.org/10.5281/zenodo.21772041" target="_blank" rel="noopener noreferrer">[code]</a>
+            <a href="https://doi.org/10.5281/zenodo.21771606" target="_blank" rel="noopener noreferrer">[reproduction]</a>
           </div>
           <ul class="notes">
-            <li><span class="bullet" aria-hidden="true">·</span><span class="pretty">Introduces NTIDE as an interpretable nonlocal delayed-field framework for studying financial instability and early-warning signals.</span></li>
-          </ul>
-        </li>
-        <li>
-          <span class="pub-title">Finite-size limits of variance-based early warning in delayed stochastic-agent fields</span>
-          <div class="pub-meta">
-            <span>Manuscript under review</span>
-            <span class="ink">[submitted]</span>
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.5281/zenodo.21771415" target="_blank" rel="noopener noreferrer">[code]</a>
-          </div>
-          <ul class="notes">
-            <li><span class="bullet" aria-hidden="true">·</span><span class="pretty">Studies how local occupancy and total population constrain variance-based early warning near delayed instabilities.</span></li>
+            <li><span class="bullet" aria-hidden="true">·</span><span class="pretty">Develops a nonlocal trend-inhibition delay equation and evaluates propagation-aware early-warning measures across seven crisis episodes under a strictly forward-looking, no-lookahead protocol.</span></li>
           </ul>
         </li>
       </ul>
@@ -351,25 +317,18 @@
 
     <hr class="rule" />
 
-    <!-- ── §3 ABOUT ─────────────────────────────── -->
     <section>
       <h2 class="section-label">§3 About</h2>
       <p class="pretty">
-        I am an independent researcher working on the statistical physics of collective systems: when interacting agents can be
-        reduced to fields, when those fields can be trusted, and whether instability can be seen and controlled before failure.
+        I am an independent researcher at Meta Sci working on learning dynamics, stochastic optimization, and effective predictive states.
       </p>
 
       <p class="pretty" style="margin-top:1rem">
-        My path is unconventional. I began in security engineering at Tencent, competed in cybersecurity challenges, and spent
-        several years building and operating multi-agent digital systems. Alongside that work, I trained independently in
-        stochastic processes, PDEs, statistical mechanics, nonlinear dynamics, and scientific computing. These threads converged
-        into a single research program: field admissibility, stochastic microfoundations, finite-size effects, early warning,
-        and timescale-constrained control in human–AI systems.
+        My route into learning dynamics began in cybersecurity, multi-agent digital systems, and quantitative decision tools. Across these settings, I repeatedly encountered the same difficulty: outcomes were easier to observe than the hidden state needed to explain or predict them. Learning dynamics provides a setting in which that question can be tested through controlled intervention.
       </p>
 
       <p class="pretty" style="margin-top:1rem">
-        I conduct and publish this work through <strong><a class="inline-link" href="https://metasci.co" target="_blank" rel="noopener noreferrer">Meta Sci</a></strong>, the independent research studio I
-        founded, and release open reproducibility code with each major result.
+        I conduct this work independently through <strong><a class="inline-link" href="https://metasci.co" target="_blank" rel="noopener noreferrer">Meta Sci</a></strong>, where I develop and release versioned code, protocols, and evidence packages alongside major results.
       </p>
     </section>
   </main>
